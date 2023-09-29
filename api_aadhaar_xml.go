@@ -1,5 +1,5 @@
 /*
-decentro-in-kyc
+decentro-in-kyc Copy 6
 
 KYC & Onboarding
 
@@ -29,7 +29,7 @@ type AadhaarXmlApiGenerateOtpRequest struct {
 	aadhaarxmlGenerateOtpRequest AadhaarxmlGenerateOtpRequest
 }
 
-func (r AadhaarXmlApiGenerateOtpRequest) Execute() (string, *http.Response, error) {
+func (r AadhaarXmlApiGenerateOtpRequest) Execute() (*AadhaarxmlGenerateOtpResponse, *http.Response, error) {
 	return r.ApiService.GenerateOtpExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *AadhaarXmlApiService) GenerateOtp(aadhaarxmlGenerateOtpRequest Aadhaarx
 }
 
 // Execute executes the request
-//  @return string
-func (a *AadhaarXmlApiService) GenerateOtpExecute(r AadhaarXmlApiGenerateOtpRequest) (string, *http.Response, error) {
+//  @return AadhaarxmlGenerateOtpResponse
+func (a *AadhaarXmlApiService) GenerateOtpExecute(r AadhaarXmlApiGenerateOtpRequest) (*AadhaarxmlGenerateOtpResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *AadhaarxmlGenerateOtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AadhaarXmlApiService.GenerateOtp")
@@ -79,7 +79,7 @@ func (a *AadhaarXmlApiService) GenerateOtpExecute(r AadhaarXmlApiGenerateOtpRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -153,7 +153,7 @@ func (a *AadhaarXmlApiService) GenerateOtpExecute(r AadhaarXmlApiGenerateOtpRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v AadhaarxmlGenerateOtp400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -183,7 +183,7 @@ type AadhaarXmlApiInitiateSessionRequest struct {
 	aadhaarxmlInitiateSessionRequest AadhaarxmlInitiateSessionRequest
 }
 
-func (r AadhaarXmlApiInitiateSessionRequest) Execute() (string, *http.Response, error) {
+func (r AadhaarXmlApiInitiateSessionRequest) Execute() (*AadhaarxmlInitiateSessionResponse, *http.Response, error) {
 	return r.ApiService.InitiateSessionExecute(r)
 }
 
@@ -203,13 +203,13 @@ func (a *AadhaarXmlApiService) InitiateSession(aadhaarxmlInitiateSessionRequest 
 }
 
 // Execute executes the request
-//  @return string
-func (a *AadhaarXmlApiService) InitiateSessionExecute(r AadhaarXmlApiInitiateSessionRequest) (string, *http.Response, error) {
+//  @return AadhaarxmlInitiateSessionResponse
+func (a *AadhaarXmlApiService) InitiateSessionExecute(r AadhaarXmlApiInitiateSessionRequest) (*AadhaarxmlInitiateSessionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *AadhaarxmlInitiateSessionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AadhaarXmlApiService.InitiateSession")
@@ -233,7 +233,7 @@ func (a *AadhaarXmlApiService) InitiateSessionExecute(r AadhaarXmlApiInitiateSes
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -307,7 +307,7 @@ func (a *AadhaarXmlApiService) InitiateSessionExecute(r AadhaarXmlApiInitiateSes
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v AadhaarxmlInitiateSession400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -337,7 +337,7 @@ type AadhaarXmlApiReloadCaptchaRequest struct {
 	aadhaarxmlReloadCaptchaRequest AadhaarxmlReloadCaptchaRequest
 }
 
-func (r AadhaarXmlApiReloadCaptchaRequest) Execute() (string, *http.Response, error) {
+func (r AadhaarXmlApiReloadCaptchaRequest) Execute() (*AadhaarxmlReloadCaptchaResponse, *http.Response, error) {
 	return r.ApiService.ReloadCaptchaExecute(r)
 }
 
@@ -357,13 +357,13 @@ func (a *AadhaarXmlApiService) ReloadCaptcha(aadhaarxmlReloadCaptchaRequest Aadh
 }
 
 // Execute executes the request
-//  @return string
-func (a *AadhaarXmlApiService) ReloadCaptchaExecute(r AadhaarXmlApiReloadCaptchaRequest) (string, *http.Response, error) {
+//  @return AadhaarxmlReloadCaptchaResponse
+func (a *AadhaarXmlApiService) ReloadCaptchaExecute(r AadhaarXmlApiReloadCaptchaRequest) (*AadhaarxmlReloadCaptchaResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *AadhaarxmlReloadCaptchaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AadhaarXmlApiService.ReloadCaptcha")
@@ -387,7 +387,7 @@ func (a *AadhaarXmlApiService) ReloadCaptchaExecute(r AadhaarXmlApiReloadCaptcha
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -461,7 +461,7 @@ func (a *AadhaarXmlApiService) ReloadCaptchaExecute(r AadhaarXmlApiReloadCaptcha
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v AadhaarxmlReloadCaptcha400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -491,7 +491,7 @@ type AadhaarXmlApiValidateOtpRequest struct {
 	aadhaarxmlValidateOtpRequest AadhaarxmlValidateOtpRequest
 }
 
-func (r AadhaarXmlApiValidateOtpRequest) Execute() (string, *http.Response, error) {
+func (r AadhaarXmlApiValidateOtpRequest) Execute() (*AadhaarxmlValidateOtpResponse, *http.Response, error) {
 	return r.ApiService.ValidateOtpExecute(r)
 }
 
@@ -511,13 +511,13 @@ func (a *AadhaarXmlApiService) ValidateOtp(aadhaarxmlValidateOtpRequest Aadhaarx
 }
 
 // Execute executes the request
-//  @return string
-func (a *AadhaarXmlApiService) ValidateOtpExecute(r AadhaarXmlApiValidateOtpRequest) (string, *http.Response, error) {
+//  @return AadhaarxmlValidateOtpResponse
+func (a *AadhaarXmlApiService) ValidateOtpExecute(r AadhaarXmlApiValidateOtpRequest) (*AadhaarxmlValidateOtpResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *AadhaarxmlValidateOtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AadhaarXmlApiService.ValidateOtp")
@@ -541,7 +541,7 @@ func (a *AadhaarXmlApiService) ValidateOtpExecute(r AadhaarXmlApiValidateOtpRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -615,7 +615,7 @@ func (a *AadhaarXmlApiService) ValidateOtpExecute(r AadhaarXmlApiValidateOtpRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v AadhaarxmlValidateOtp400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

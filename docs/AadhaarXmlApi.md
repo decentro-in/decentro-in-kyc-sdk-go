@@ -21,7 +21,6 @@ Generate OTP
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -51,10 +50,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AadhaarXmlApi.GenerateOtp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `GenerateOtp`: string
+    // response from `GenerateOtp`: AadhaarxmlGenerateOtpResponse
     fmt.Fprintf(os.Stdout, "Response from `AadhaarXmlApi.GenerateOtp`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlGenerateOtpResponse.GenerateOtp.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlGenerateOtpResponse.GenerateOtp.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlGenerateOtpResponse.GenerateOtp.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlGenerateOtpResponse.GenerateOtp.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlGenerateOtpResponse.GenerateOtp.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -73,7 +77,6 @@ Initiate Session
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -100,10 +103,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AadhaarXmlApi.InitiateSession``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `InitiateSession`: string
+    // response from `InitiateSession`: AadhaarxmlInitiateSessionResponse
     fmt.Fprintf(os.Stdout, "Response from `AadhaarXmlApi.InitiateSession`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlInitiateSessionResponse.InitiateSession.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -122,7 +131,6 @@ Reload Captcha
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -150,10 +158,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AadhaarXmlApi.ReloadCaptcha``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `ReloadCaptcha`: string
+    // response from `ReloadCaptcha`: AadhaarxmlReloadCaptchaResponse
     fmt.Fprintf(os.Stdout, "Response from `AadhaarXmlApi.ReloadCaptcha`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlReloadCaptchaResponse.ReloadCaptcha.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -172,7 +186,6 @@ Validate OTP
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -204,10 +217,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AadhaarXmlApi.ValidateOtp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `ValidateOtp`: string
+    // response from `ValidateOtp`: AadhaarxmlValidateOtpResponse
     fmt.Fprintf(os.Stdout, "Response from `AadhaarXmlApi.ValidateOtp`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `AadhaarxmlValidateOtpResponse.ValidateOtp.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 

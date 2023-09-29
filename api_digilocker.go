@@ -1,5 +1,5 @@
 /*
-decentro-in-kyc
+decentro-in-kyc Copy 6
 
 KYC & Onboarding
 
@@ -31,7 +31,7 @@ type DigilockerApiDownloadFileRequest struct {
 	digilockerDownloadFileRequest DigilockerDownloadFileRequest
 }
 
-func (r DigilockerApiDownloadFileRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiDownloadFileRequest) Execute() (*DigilockerDownloadFileResponse, *http.Response, error) {
 	return r.ApiService.DownloadFileExecute(r)
 }
 
@@ -53,13 +53,13 @@ func (a *DigilockerApiService) DownloadFile(initialDecentroTxnId string, digiloc
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) DownloadFileExecute(r DigilockerApiDownloadFileRequest) (string, *http.Response, error) {
+//  @return DigilockerDownloadFileResponse
+func (a *DigilockerApiService) DownloadFileExecute(r DigilockerApiDownloadFileRequest) (*DigilockerDownloadFileResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerDownloadFileResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.DownloadFile")
@@ -87,7 +87,7 @@ func (a *DigilockerApiService) DownloadFileExecute(r DigilockerApiDownloadFileRe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -161,7 +161,7 @@ func (a *DigilockerApiService) DownloadFileExecute(r DigilockerApiDownloadFileRe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerDownloadFile400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -192,7 +192,7 @@ type DigilockerApiEAadhaarRequest struct {
 	digilockerEAadhaarRequest DigilockerEAadhaarRequest
 }
 
-func (r DigilockerApiEAadhaarRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiEAadhaarRequest) Execute() (*DigilockerEAadhaarResponse, *http.Response, error) {
 	return r.ApiService.EAadhaarExecute(r)
 }
 
@@ -214,13 +214,13 @@ func (a *DigilockerApiService) EAadhaar(initialDecentroTxnId string, digilockerE
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) EAadhaarExecute(r DigilockerApiEAadhaarRequest) (string, *http.Response, error) {
+//  @return DigilockerEAadhaarResponse
+func (a *DigilockerApiService) EAadhaarExecute(r DigilockerApiEAadhaarRequest) (*DigilockerEAadhaarResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerEAadhaarResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.EAadhaar")
@@ -248,7 +248,7 @@ func (a *DigilockerApiService) EAadhaarExecute(r DigilockerApiEAadhaarRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -322,7 +322,7 @@ func (a *DigilockerApiService) EAadhaarExecute(r DigilockerApiEAadhaarRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerEAadhaar400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -353,7 +353,7 @@ type DigilockerApiFileDataRequest struct {
 	digilockerFileDataRequest DigilockerFileDataRequest
 }
 
-func (r DigilockerApiFileDataRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiFileDataRequest) Execute() (*DigilockerFileDataResponse, *http.Response, error) {
 	return r.ApiService.FileDataExecute(r)
 }
 
@@ -375,13 +375,13 @@ func (a *DigilockerApiService) FileData(initialDecentroTxnId string, digilockerF
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) FileDataExecute(r DigilockerApiFileDataRequest) (string, *http.Response, error) {
+//  @return DigilockerFileDataResponse
+func (a *DigilockerApiService) FileDataExecute(r DigilockerApiFileDataRequest) (*DigilockerFileDataResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerFileDataResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.FileData")
@@ -409,7 +409,7 @@ func (a *DigilockerApiService) FileDataExecute(r DigilockerApiFileDataRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -483,7 +483,7 @@ func (a *DigilockerApiService) FileDataExecute(r DigilockerApiFileDataRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerFileData400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -514,7 +514,7 @@ type DigilockerApiGenerateAccessTokenRequest struct {
 	digilockerGenerateAccessTokenRequest DigilockerGenerateAccessTokenRequest
 }
 
-func (r DigilockerApiGenerateAccessTokenRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiGenerateAccessTokenRequest) Execute() (*DigilockerGenerateAccessTokenResponse, *http.Response, error) {
 	return r.ApiService.GenerateAccessTokenExecute(r)
 }
 
@@ -536,13 +536,13 @@ func (a *DigilockerApiService) GenerateAccessToken(initialDecentroTxnId string, 
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) GenerateAccessTokenExecute(r DigilockerApiGenerateAccessTokenRequest) (string, *http.Response, error) {
+//  @return DigilockerGenerateAccessTokenResponse
+func (a *DigilockerApiService) GenerateAccessTokenExecute(r DigilockerApiGenerateAccessTokenRequest) (*DigilockerGenerateAccessTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerGenerateAccessTokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.GenerateAccessToken")
@@ -570,7 +570,7 @@ func (a *DigilockerApiService) GenerateAccessTokenExecute(r DigilockerApiGenerat
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -644,7 +644,7 @@ func (a *DigilockerApiService) GenerateAccessTokenExecute(r DigilockerApiGenerat
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerGenerateAccessToken400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -674,7 +674,7 @@ type DigilockerApiInitiateSessionRequest struct {
 	digilockerInitiateSessionRequest DigilockerInitiateSessionRequest
 }
 
-func (r DigilockerApiInitiateSessionRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiInitiateSessionRequest) Execute() (*DigilockerInitiateSessionResponse, *http.Response, error) {
 	return r.ApiService.InitiateSessionExecute(r)
 }
 
@@ -694,13 +694,13 @@ func (a *DigilockerApiService) InitiateSession(digilockerInitiateSessionRequest 
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) InitiateSessionExecute(r DigilockerApiInitiateSessionRequest) (string, *http.Response, error) {
+//  @return DigilockerInitiateSessionResponse
+func (a *DigilockerApiService) InitiateSessionExecute(r DigilockerApiInitiateSessionRequest) (*DigilockerInitiateSessionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerInitiateSessionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.InitiateSession")
@@ -724,7 +724,7 @@ func (a *DigilockerApiService) InitiateSessionExecute(r DigilockerApiInitiateSes
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -798,7 +798,7 @@ func (a *DigilockerApiService) InitiateSessionExecute(r DigilockerApiInitiateSes
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerInitiateSession400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -829,7 +829,7 @@ type DigilockerApiIssuedFilesRequest struct {
 	digilockerIssuedFilesRequest DigilockerIssuedFilesRequest
 }
 
-func (r DigilockerApiIssuedFilesRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiIssuedFilesRequest) Execute() (*DigilockerIssuedFilesResponse, *http.Response, error) {
 	return r.ApiService.IssuedFilesExecute(r)
 }
 
@@ -851,13 +851,13 @@ func (a *DigilockerApiService) IssuedFiles(initialDecentroTxnId string, digilock
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) IssuedFilesExecute(r DigilockerApiIssuedFilesRequest) (string, *http.Response, error) {
+//  @return DigilockerIssuedFilesResponse
+func (a *DigilockerApiService) IssuedFilesExecute(r DigilockerApiIssuedFilesRequest) (*DigilockerIssuedFilesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerIssuedFilesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.IssuedFiles")
@@ -885,7 +885,7 @@ func (a *DigilockerApiService) IssuedFilesExecute(r DigilockerApiIssuedFilesRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -959,7 +959,7 @@ func (a *DigilockerApiService) IssuedFilesExecute(r DigilockerApiIssuedFilesRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerIssuedFiles400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -990,7 +990,7 @@ type DigilockerApiPullFileRequest struct {
 	digilockerPullFileRequest DigilockerPullFileRequest
 }
 
-func (r DigilockerApiPullFileRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiPullFileRequest) Execute() (*DigilockerPullFileResponse, *http.Response, error) {
 	return r.ApiService.PullFileExecute(r)
 }
 
@@ -1012,13 +1012,13 @@ func (a *DigilockerApiService) PullFile(initialDecentroTxnId string, digilockerP
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) PullFileExecute(r DigilockerApiPullFileRequest) (string, *http.Response, error) {
+//  @return DigilockerPullFileResponse
+func (a *DigilockerApiService) PullFileExecute(r DigilockerApiPullFileRequest) (*DigilockerPullFileResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerPullFileResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.PullFile")
@@ -1046,7 +1046,7 @@ func (a *DigilockerApiService) PullFileExecute(r DigilockerApiPullFileRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1120,7 +1120,7 @@ func (a *DigilockerApiService) PullFileExecute(r DigilockerApiPullFileRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerPullFile400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1150,7 +1150,7 @@ type DigilockerApiRevokeTokenRequest struct {
 	initialDecentroTxnId string
 }
 
-func (r DigilockerApiRevokeTokenRequest) Execute() (string, *http.Response, error) {
+func (r DigilockerApiRevokeTokenRequest) Execute() (*DigilockerRevokeTokenResponse, *http.Response, error) {
 	return r.ApiService.RevokeTokenExecute(r)
 }
 
@@ -1170,13 +1170,13 @@ func (a *DigilockerApiService) RevokeToken(initialDecentroTxnId string) Digilock
 }
 
 // Execute executes the request
-//  @return string
-func (a *DigilockerApiService) RevokeTokenExecute(r DigilockerApiRevokeTokenRequest) (string, *http.Response, error) {
+//  @return DigilockerRevokeTokenResponse
+func (a *DigilockerApiService) RevokeTokenExecute(r DigilockerApiRevokeTokenRequest) (*DigilockerRevokeTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *DigilockerRevokeTokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DigilockerApiService.RevokeToken")
@@ -1204,7 +1204,7 @@ func (a *DigilockerApiService) RevokeTokenExecute(r DigilockerApiRevokeTokenRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1276,7 +1276,7 @@ func (a *DigilockerApiService) RevokeTokenExecute(r DigilockerApiRevokeTokenRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v DigilockerRevokeToken400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

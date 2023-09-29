@@ -25,7 +25,6 @@ Download File
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -54,10 +53,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.DownloadFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `DownloadFile`: string
+    // response from `DownloadFile`: DigilockerDownloadFileResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.DownloadFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerDownloadFileResponse.DownloadFile.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -76,7 +81,6 @@ eAadhaar
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -106,10 +110,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.EAadhaar``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `EAadhaar`: string
+    // response from `EAadhaar`: DigilockerEAadhaarResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.EAadhaar`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerEAadhaarResponse.EAadhaar.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -128,7 +138,6 @@ File Data
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -157,10 +166,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.FileData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `FileData`: string
+    // response from `FileData`: DigilockerFileDataResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.FileData`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerFileDataResponse.FileData.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -179,7 +194,6 @@ Access Token
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -208,10 +222,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.GenerateAccessToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `GenerateAccessToken`: string
+    // response from `GenerateAccessToken`: DigilockerGenerateAccessTokenResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.GenerateAccessToken`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerGenerateAccessTokenResponse.GenerateAccessToken.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -230,7 +250,6 @@ Initiate Session
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -258,10 +277,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.InitiateSession``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `InitiateSession`: string
+    // response from `InitiateSession`: DigilockerInitiateSessionResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.InitiateSession`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerInitiateSessionResponse.InitiateSession.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -280,7 +305,6 @@ Issued Files
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -308,10 +332,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.IssuedFiles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `IssuedFiles`: string
+    // response from `IssuedFiles`: DigilockerIssuedFilesResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.IssuedFiles`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerIssuedFilesResponse.IssuedFiles.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -330,7 +360,6 @@ Pull File
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -363,10 +392,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.PullFile``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `PullFile`: string
+    // response from `PullFile`: DigilockerPullFileResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.PullFile`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerPullFileResponse.PullFile.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerPullFileResponse.PullFile.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerPullFileResponse.PullFile.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerPullFileResponse.PullFile.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerPullFileResponse.PullFile.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -385,7 +419,6 @@ Revoke Token
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -406,10 +439,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DigilockerApi.RevokeToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `RevokeToken`: string
+    // response from `RevokeToken`: DigilockerRevokeTokenResponse
     fmt.Fprintf(os.Stdout, "Response from `DigilockerApi.RevokeToken`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `DigilockerRevokeTokenResponse.RevokeToken.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 

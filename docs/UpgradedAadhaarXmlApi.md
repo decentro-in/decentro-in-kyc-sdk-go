@@ -19,7 +19,6 @@ Generate OTP
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -47,10 +46,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UpgradedAadhaarXmlApi.GenerateOtp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `GenerateOtp`: string
+    // response from `GenerateOtp`: UpgradedaadhaarxmlGenerateOtpResponse
     fmt.Fprintf(os.Stdout, "Response from `UpgradedAadhaarXmlApi.GenerateOtp`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlGenerateOtpResponse.GenerateOtp.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlGenerateOtpResponse.GenerateOtp.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlGenerateOtpResponse.GenerateOtp.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlGenerateOtpResponse.GenerateOtp.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlGenerateOtpResponse.GenerateOtp.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 
@@ -69,7 +73,6 @@ Validate OTP
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -98,10 +101,16 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UpgradedAadhaarXmlApi.ValidateOtp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
-    // response from `ValidateOtp`: string
+    // response from `ValidateOtp`: UpgradedaadhaarxmlValidateOtpResponse
     fmt.Fprintf(os.Stdout, "Response from `UpgradedAadhaarXmlApi.ValidateOtp`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `UpgradedaadhaarxmlValidateOtpResponse.ValidateOtp.ResponseKey`: %v\n", *resp.ResponseKey)
 }
 ```
 

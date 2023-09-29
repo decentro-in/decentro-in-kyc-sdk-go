@@ -1,5 +1,5 @@
 /*
-decentro-in-kyc
+decentro-in-kyc Copy 6
 
 KYC & Onboarding
 
@@ -29,7 +29,7 @@ type UpgradedAadhaarXmlApiGenerateOtpRequest struct {
 	upgradedaadhaarxmlGenerateOtpRequest UpgradedaadhaarxmlGenerateOtpRequest
 }
 
-func (r UpgradedAadhaarXmlApiGenerateOtpRequest) Execute() (string, *http.Response, error) {
+func (r UpgradedAadhaarXmlApiGenerateOtpRequest) Execute() (*UpgradedaadhaarxmlGenerateOtpResponse, *http.Response, error) {
 	return r.ApiService.GenerateOtpExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *UpgradedAadhaarXmlApiService) GenerateOtp(upgradedaadhaarxmlGenerateOtp
 }
 
 // Execute executes the request
-//  @return string
-func (a *UpgradedAadhaarXmlApiService) GenerateOtpExecute(r UpgradedAadhaarXmlApiGenerateOtpRequest) (string, *http.Response, error) {
+//  @return UpgradedaadhaarxmlGenerateOtpResponse
+func (a *UpgradedAadhaarXmlApiService) GenerateOtpExecute(r UpgradedAadhaarXmlApiGenerateOtpRequest) (*UpgradedaadhaarxmlGenerateOtpResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *UpgradedaadhaarxmlGenerateOtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradedAadhaarXmlApiService.GenerateOtp")
@@ -79,7 +79,7 @@ func (a *UpgradedAadhaarXmlApiService) GenerateOtpExecute(r UpgradedAadhaarXmlAp
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -153,7 +153,7 @@ func (a *UpgradedAadhaarXmlApiService) GenerateOtpExecute(r UpgradedAadhaarXmlAp
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v UpgradedaadhaarxmlGenerateOtp400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -183,7 +183,7 @@ type UpgradedAadhaarXmlApiValidateOtpRequest struct {
 	upgradedaadhaarxmlValidateOtpRequest UpgradedaadhaarxmlValidateOtpRequest
 }
 
-func (r UpgradedAadhaarXmlApiValidateOtpRequest) Execute() (string, *http.Response, error) {
+func (r UpgradedAadhaarXmlApiValidateOtpRequest) Execute() (*UpgradedaadhaarxmlValidateOtpResponse, *http.Response, error) {
 	return r.ApiService.ValidateOtpExecute(r)
 }
 
@@ -203,13 +203,13 @@ func (a *UpgradedAadhaarXmlApiService) ValidateOtp(upgradedaadhaarxmlValidateOtp
 }
 
 // Execute executes the request
-//  @return string
-func (a *UpgradedAadhaarXmlApiService) ValidateOtpExecute(r UpgradedAadhaarXmlApiValidateOtpRequest) (string, *http.Response, error) {
+//  @return UpgradedaadhaarxmlValidateOtpResponse
+func (a *UpgradedAadhaarXmlApiService) ValidateOtpExecute(r UpgradedAadhaarXmlApiValidateOtpRequest) (*UpgradedaadhaarxmlValidateOtpResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *UpgradedaadhaarxmlValidateOtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradedAadhaarXmlApiService.ValidateOtp")
@@ -233,7 +233,7 @@ func (a *UpgradedAadhaarXmlApiService) ValidateOtpExecute(r UpgradedAadhaarXmlAp
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -265,7 +265,7 @@ func (a *UpgradedAadhaarXmlApiService) ValidateOtpExecute(r UpgradedAadhaarXmlAp
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v string
+			var v UpgradedaadhaarxmlValidateOtp400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -25,7 +25,6 @@ Image Quality Check
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -51,10 +50,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.CheckImageQuality``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `CheckImageQuality`: CheckImageQualityResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.CheckImageQuality`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CheckImageQualityResponse.CheckImageQuality.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `CheckImageQualityResponse.CheckImageQuality.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `CheckImageQualityResponse.CheckImageQuality.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `CheckImageQualityResponse.CheckImageQuality.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `CheckImageQualityResponse.CheckImageQuality.Data`: %v\n", *resp.Data)
 }
 ```
 
@@ -73,7 +77,6 @@ Photocopy Check
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -98,10 +101,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.CheckPhotocopy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `CheckPhotocopy`: CheckPhotocopyResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.CheckPhotocopy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CheckPhotocopyResponse.CheckPhotocopy.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `CheckPhotocopyResponse.CheckPhotocopy.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `CheckPhotocopyResponse.CheckPhotocopy.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `CheckPhotocopyResponse.CheckPhotocopy.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `CheckPhotocopyResponse.CheckPhotocopy.Status`: %v\n", *resp.Status)
 }
 ```
 
@@ -120,7 +128,6 @@ Liveness Check
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -145,10 +152,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.CheckVideoLiveness``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `CheckVideoLiveness`: CheckVideoLivenessResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.CheckVideoLiveness`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CheckVideoLivenessResponse.CheckVideoLiveness.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `CheckVideoLivenessResponse.CheckVideoLiveness.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `CheckVideoLivenessResponse.CheckVideoLiveness.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `CheckVideoLivenessResponse.CheckVideoLiveness.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `CheckVideoLivenessResponse.CheckVideoLiveness.Status`: %v\n", *resp.Status)
 }
 ```
 
@@ -167,7 +179,6 @@ ID Classification
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -193,10 +204,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.ClassifyDocument``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `ClassifyDocument`: ClassifyDocumentResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.ClassifyDocument`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClassifyDocumentResponse.ClassifyDocument.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `ClassifyDocumentResponse.ClassifyDocument.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `ClassifyDocumentResponse.ClassifyDocument.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `ClassifyDocumentResponse.ClassifyDocument.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `ClassifyDocumentResponse.ClassifyDocument.Status`: %v\n", *resp.Status)
 }
 ```
 
@@ -215,7 +231,6 @@ Scan & Extract
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -244,10 +259,18 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.ExtractText``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `ExtractText`: ExtractTextResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.ExtractText`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.OcrStatus`: %v\n", *resp.OcrStatus)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.OcrResult`: %v\n", *resp.OcrResult)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.RequestTimestamp`: %v\n", *resp.RequestTimestamp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.ResponseTimestamp`: %v\n", *resp.ResponseTimestamp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtractTextResponse.ExtractText.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
 }
 ```
 
@@ -266,7 +289,6 @@ Aadhaar Masking
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -291,10 +313,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.MaskAadhaarUid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `MaskAadhaarUid`: MaskAadhaarUidResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.MaskAadhaarUid`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MaskAadhaarUidResponse.MaskAadhaarUid.Data`: %v\n", *resp.Data)
+    fmt.Fprintf(os.Stdout, "Response from `MaskAadhaarUidResponse.MaskAadhaarUid.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `MaskAadhaarUidResponse.MaskAadhaarUid.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `MaskAadhaarUidResponse.MaskAadhaarUid.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `MaskAadhaarUidResponse.MaskAadhaarUid.Status`: %v\n", *resp.Status)
 }
 ```
 
@@ -313,7 +340,6 @@ Face Match
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -341,10 +367,15 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.MatchFace``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `MatchFace`: MatchFaceResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.MatchFace`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MatchFaceResponse.MatchFace.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `MatchFaceResponse.MatchFace.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `MatchFaceResponse.MatchFace.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `MatchFaceResponse.MatchFace.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `MatchFaceResponse.MatchFace.Data`: %v\n", *resp.Data)
 }
 ```
 
@@ -363,7 +394,6 @@ Validate
 package main
 
 import (
-    "context"
     "fmt"
     "os"
     decentroinkyc "github.com/decentro-in/decentro-in-kyc-sdk-go"
@@ -395,10 +425,19 @@ func main() {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KYCApi.Validate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", httpRes)
     }
     // response from `Validate`: ValidateResponse
     fmt.Fprintf(os.Stdout, "Response from `KYCApi.Validate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.KycStatus`: %v\n", *resp.KycStatus)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.Status`: %v\n", *resp.Status)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.Message`: %v\n", *resp.Message)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.KycResult`: %v\n", *resp.KycResult)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.ResponseCode`: %v\n", *resp.ResponseCode)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.RequestTimestamp`: %v\n", *resp.RequestTimestamp)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.ResponseTimestamp`: %v\n", *resp.ResponseTimestamp)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.DecentroTxnId`: %v\n", *resp.DecentroTxnId)
+    fmt.Fprintf(os.Stdout, "Response from `ValidateResponse.Validate.Error`: %v\n", *resp.Error)
 }
 ```
 
