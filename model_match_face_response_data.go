@@ -1,5 +1,5 @@
 /*
-decentro-in-kyc Copy 6
+decentro-in-kyc
 
 KYC & Onboarding
 

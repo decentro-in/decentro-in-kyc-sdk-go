@@ -5,7 +5,7 @@ info:
     name: Decentro
     url: https://decentro.tech
   description: KYC & Onboarding
-  title: decentro-in-kyc Copy 6
+  title: decentro-in-kyc
   version: 1.0.0
   x-konfig-ignore:
     object-with-no-properties: true

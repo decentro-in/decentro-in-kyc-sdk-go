@@ -1,5 +1,5 @@
 /*
-decentro-in-kyc Copy 6
+decentro-in-kyc
 
 KYC & Onboarding
 
@@ -42,7 +42,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the decentro-in-kyc Copy 6 API v1.0.0
+// APIClient manages communication with the decentro-in-kyc API v1.0.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
